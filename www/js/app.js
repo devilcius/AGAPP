@@ -1,10 +1,10 @@
-// Ionic Starter App
+// Ionic AUGC App App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'augc-app' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters'])
+// 'augc-app.controllers' is found in controllers.js
+angular.module('augc-app', ['ionic', 'augc-app.controllers', 'augc-app.filters'])
 
         .run(function ($ionicPlatform) {
             $ionicPlatform.ready(function () {
@@ -41,11 +41,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters'])
                         }
                     })
 
-                    .state('app.browse', {
-                        url: '/browse',
+                    .state('app.home', {
+                        url: '/home',
                         views: {
                             'menuContent': {
-                                templateUrl: 'templates/browse.html'
+                                templateUrl: 'templates/home.html'
                             }
                         }
                     })
@@ -68,5 +68,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters'])
                         }
                     });
             // if none of the above states are matched, use this as the fallback
-            $urlRouterProvider.otherwise('/app/posts');
+            $urlRouterProvider.otherwise('/app/home');
         });

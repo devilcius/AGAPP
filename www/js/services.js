@@ -1,4 +1,4 @@
-angular.module('starter.services', ['ngResource'])
+angular.module('augc-app.services', ['ngResource'])
 
 .factory('Post', function ($resource) {
     return $resource(

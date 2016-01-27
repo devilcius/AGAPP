@@ -1,7 +1,7 @@
 angular.module('app', [
-  'ngSanitize'
+    'ngSanitize'
 ]);
-angular.module('starter.controllers', ['starter.services'])
+angular.module('augc-app.controllers', ['augc-app.services'])
 
         .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
 
@@ -44,11 +44,30 @@ angular.module('starter.controllers', ['starter.services'])
             };
         })
 
-        .controller('PostsCtrl', function ($scope, Post) {
-            $scope.posts = Post.query();
+        .controller('PostsCtrl', function ($scope, Post, $ionicLoading) {
+            $ionicLoading.show({
+                content: 'Loading',
+                animation: 'fade-in',
+                showBackdrop: true,
+                maxWidth: 200,
+                showDelay: 0
+            });
+            $scope.posts = Post.query(function () {
+                $ionicLoading.hide();
+            });
+
         })
 
-        .controller('PostCtrl', function ($scope, $stateParams, Post) {
-            $scope.post = Post.get({postId: $stateParams.postId});
-    
+        .controller('PostCtrl', function ($scope, $stateParams, Post, $ionicLoading) {
+            $ionicLoading.show({
+                content: 'Loading',
+                animation: 'fade-in',
+                showBackdrop: true,
+                maxWidth: 200,
+                showDelay: 0
+            });
+            $scope.post = Post.get({postId: $stateParams.postId}, function () {
+                $ionicLoading.hide();
+            });
+
         });
