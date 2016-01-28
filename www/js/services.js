@@ -5,7 +5,7 @@ angular.module('augc-app.services', ['ngResource'])
                 return {
                     signin: function (credentials, callback) {
                         return $http({
-                            url: 'https://aga.com/app_dev.php/app/user/login_check',
+                            url: 'https://augc.org/app/user/login_check',
                             method: 'POST',
                             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                             data: $httpParamSerializer(credentials)
@@ -28,7 +28,7 @@ angular.module('augc-app.services', ['ngResource'])
             }])
         .factory('Post', function ($resource) {
             return $resource(
-                    'http://aga.com/app_dev.php/api/news/posts/:postId' + '.json',
+                    'http://augc.org/api/news/posts/:postId' + '.json',
                     {page: 1, enabled: 1},
                     {'query': {method: 'GET', isArray: false}}
             );
