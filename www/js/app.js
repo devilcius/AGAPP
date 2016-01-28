@@ -69,4 +69,4 @@ angular.module('augc-app', ['ionic', 'augc-app.controllers', 'augc-app.filters']
                     });
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/app/home');
-        });
+        })
