@@ -34,16 +34,16 @@ angular.module('augc-app.controllers', ['augc-app.services'])
 
             // Perform the login action when the user submits the login form
             $scope.doLogin = function () {
-                console.log('Doing login', $scope.loginData);
                 var formData = {username: $scope.loginData.username, password: $scope.loginData.password};
-                $scope.signin = Auth.signin(formData, function () {
-                    $scope.closeLogin();
+                var $thatScope = $scope;
+                Auth.signin(formData, function (callBackResponse) {
+                    if(callBackResponse.success) {
+                      $thatScope.closeLogin();  
+                      console.log("successfully log in");
+                    } else {
+                        console.error("Login error", callBackResponse.msg);
+                    }
                 });
-                // Simulate a login delay. Remove this and replace with your login
-                // code if using a login system
-                $timeout(function () {
-                    $scope.closeLogin();
-                }, 1000);
             };
         })
 
