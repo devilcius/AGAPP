@@ -1,6 +1,6 @@
 # AGAPP
 ## Requisitos
-nodejs >= v0.10.25
+nodejs
 
 android-sdk
 ## Instalación
@@ -15,6 +15,8 @@ android-sdk
 >npm install
 
 >bower install
+
+>ionic lib update
 
 ## despliegue en navegador
 >ionic serve
