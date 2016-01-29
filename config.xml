@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.conference221160" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>conference</name>
+<widget id="org.augc.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>AGAPP</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Un app para AUGC.
     </description>
-  <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+  <author email="informatica@augc.org" href="http://augc.org/">
+      Marcos
     </author>
   <content src="index.html"/>
   <access origin="*"/>
