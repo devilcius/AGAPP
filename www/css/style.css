@@ -44,31 +44,3 @@
   vertical-align: middle;
   text-align: center;
 }
-.home .event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:auto 0px;
-    padding:2px 0px;
-    text-align: center;
-}
-.home .event.received {
-    background-color:#4B946A;
-    display:block;
-}
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-.home .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
