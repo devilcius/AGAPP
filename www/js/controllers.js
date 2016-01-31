@@ -3,7 +3,7 @@ angular.module('app', [
 ]);
 angular.module('augc-app.controllers', ['augc-app.services'])
 
-        .controller('AppCtrl', function ($scope, $ionicModal, $timeout, Auth) {
+        .controller('AppCtrl', function ($scope, $ionicModal, Auth) {
 
             // With the new view caching in Ionic, Controllers are only called
             // when they are recreated or on app start, instead of every page change.
@@ -37,14 +37,15 @@ angular.module('augc-app.controllers', ['augc-app.services'])
                 var formData = {username: $scope.loginData.username, password: $scope.loginData.password};
                 var $thatScope = $scope;
                 Auth.signin(formData, function (callBackResponse) {
-                    if(callBackResponse.success) {
-                      $thatScope.closeLogin();  
-                      console.log("successfully log in");
+                    if (callBackResponse.success) {
+                        $thatScope.closeLogin();
+                        console.log("successfully log in");
                     } else {
                         console.error("Login error", callBackResponse.msg);
                     }
                 });
             };
+
         })
 
         .controller('PostsCtrl', function ($scope, Post, $ionicLoading) {
@@ -61,7 +62,7 @@ angular.module('augc-app.controllers', ['augc-app.services'])
 
         })
 
-        .controller('PostCtrl', function ($scope, $stateParams, Post, $ionicLoading) {
+        .controller('PostCtrl', function ($scope, $stateParams, Post, $ionicLoading, $cordovaSocialSharing, AUGC_CONFIG) {
             $ionicLoading.show({
                 content: 'Loading',
                 animation: 'fade-in',
@@ -73,4 +74,22 @@ angular.module('augc-app.controllers', ['augc-app.services'])
                 $ionicLoading.hide();
             });
 
+            $scope.shareAnywhere = function () {
+                var message = AUGC_CONFIG.shareComunicadoMsg;
+                var subject = AUGC_CONFIG.shareComunicadoSubject;
+                var link = AUGC_CONFIG.apiPostsUrl + $stateParams.postId + AUGC_CONFIG.apiResponseFormat;
+                //TODO: portal url, not api one, :/
+                $cordovaSocialSharing.share(message, subject, null, link);
+            };
+
+            $scope.shareViaTwitter = function (message, image, link) {
+                $cordovaSocialSharing.canShareVia("twitter", message, image, link).then(function (result) {
+                    $cordovaSocialSharing.shareViaTwitter(message, image, link);
+                }, function (error) {
+                    alert("Cannot share on Twitter");
+                });
+            };
+
         });
+
+        

@@ -4,7 +4,7 @@
 // 'augc-app' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'augc-app.controllers' is found in controllers.js
-angular.module('augc-app', ['ionic', 'augc-app.controllers', 'augc-app.filters'])
+angular.module('augc-app', ['ionic', 'ngCordova', 'augc-app.controllers', 'augc-app.filters'])
 
         .run(function ($ionicPlatform) {
             $ionicPlatform.ready(function () {

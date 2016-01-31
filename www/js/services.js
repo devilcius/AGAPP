@@ -1,11 +1,11 @@
 angular.module('augc-app.services', ['ngResource'])
 
-        .factory('Auth', ['$http', '$httpParamSerializer', function ($http, $httpParamSerializer) {
+        .factory('Auth', ['$http', '$httpParamSerializer', 'AUGC_CONFIG', function ($http, $httpParamSerializer, AUGC_CONFIG) {
                 var callBackObject = {success: false, msg: null};
                 return {
                     signin: function (credentials, callback) {
                         return $http({
-                            url: 'https://augc.org/app/user/login_check',
+                            url: AUGC_CONFIG.loginUrl,
                             method: 'POST',
                             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                             data: $httpParamSerializer(credentials)
@@ -26,9 +26,9 @@ angular.module('augc-app.services', ['ngResource'])
                     }
                 };
             }])
-        .factory('Post', function ($resource) {
+        .factory('Post', function ($resource, AUGC_CONFIG) {
             return $resource(
-                    'http://augc.org/api/news/posts/:postId' + '.json',
+                    AUGC_CONFIG.apiPostsUrl + ':postId' + AUGC_CONFIG.apiResponseFormat,
                     {page: 1, enabled: 1},
                     {'query': {method: 'GET', isArray: false}}
             );

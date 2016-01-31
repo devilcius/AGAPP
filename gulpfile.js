@@ -26,6 +26,12 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
+gulp.task('copy', function () {
+  return gulp
+    .src('./node_modules/ng-cordova/dist/ng-cordova.min.js')
+    .pipe(gulp.dest('./www/lib/cordova/'));
+});
+
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
 });

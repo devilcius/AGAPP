@@ -24,6 +24,10 @@ Applicación basada en [Apache Cordova](https://cordova.apache.org/) y la SDK de
 
 >ionic lib update
 
+>ionic state restore
+
+>gulp copy
+
 ### despliegue en navegador
 
 >ionic serve
