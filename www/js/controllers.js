@@ -90,6 +90,35 @@ angular.module('augc-app.controllers', ['augc-app.services'])
                 });
             };
 
-        });
+        })
+
+        .controller('DelegacionsCtrl', function ($scope, Delegacion, $ionicLoading) {
+            $ionicLoading.show({
+                content: 'Loading',
+                animation: 'fade-in',
+                showBackdrop: true,
+                maxWidth: 200,
+                showDelay: 0
+            });
+            $scope.delegacions = Delegacion.query(function () {
+                $ionicLoading.hide();
+            });
+
+        })
+
+        .controller('DelegacionCtrl', function ($scope, $stateParams, Delegacion, $ionicLoading) {
+            $ionicLoading.show({
+                content: 'Loading',
+                animation: 'fade-in',
+                showBackdrop: true,
+                maxWidth: 200,
+                showDelay: 0
+            });
+            $scope.delegacion = Delegacion.get({delegacionId: $stateParams.delegacionId}, function () {
+                $ionicLoading.hide();
+            });
+        })
+        
+;
 
         

@@ -1,0 +1,24 @@
+<ion-view view-title="Delegación">
+    <ion-content>
+        <div class="list card">
+            <div class="item">
+                <h2>{{ delegacion.name}}</h2>
+                <div class="item item-body">                
+                    <p>{{ delegacion.email}}</p>
+                    <p>{{ delegacion.phone}}</p>
+                    <p>{{ delegacion.address}}</p>
+                    <h2>Operadores:</h2>
+                    <ul>
+                        <li class="item item-body" ng-repeat="operator in delegacion.users" >
+                            {{ operator.firstname }} {{ operator.lastname }}
+                            <p>
+                                <a href="tel:{{ operator.phone }}" class="icon ion-android-call button button-positive"></a>
+                                <a href="mailto:{{ operator.corporate_email }}" class="icon ion-email button button-positive"></a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

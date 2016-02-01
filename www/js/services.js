@@ -33,6 +33,13 @@ angular.module('augc-app.services', ['ngResource'])
                     {'query': {method: 'GET', isArray: false}}
             );
         })
+        .factory('Delegacion', function ($resource, AUGC_CONFIG) {
+            return $resource(
+                    AUGC_CONFIG.apiDelegacionsUrl + ':delegacionId' + AUGC_CONFIG.apiResponseFormat,
+                    [],
+                    {'query': {method: 'GET', isArray: true}}
+            );
+        })
         .service('sessionService', ['$cookieStore', function ($cookieStore) {
                 var localStoreAvailable = typeof (Storage) !== "undefined";
                 this.store = function (name, details) {

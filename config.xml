@@ -8,7 +8,9 @@
         Marcos
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="*" />    	
+    <access origin="tel:*" launch-external="yes"/>
+    <access origin="mailto:*" launch-external="yes" />
     <allow-navigation href="*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />

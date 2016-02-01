@@ -31,16 +31,6 @@ angular.module('augc-app', ['ionic', 'ngCordova', 'augc-app.controllers', 'augc-
                         templateUrl: 'templates/menu.html',
                         controller: 'AppCtrl'
                     })
-
-                    .state('app.search', {
-                        url: '/search',
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'templates/search.html'
-                            }
-                        }
-                    })
-
                     .state('app.home', {
                         url: '/home',
                         views: {
@@ -66,7 +56,26 @@ angular.module('augc-app', ['ionic', 'ngCordova', 'augc-app.controllers', 'augc-
                                 controller: 'PostCtrl'
                             }
                         }
-                    });
+                    })
+                    .state('app.delegacions', {
+                        url: "/delegacions",
+                        views: {
+                            'menuContent': {
+                                templateUrl: "templates/delegacions.html",
+                                controller: 'DelegacionsCtrl'
+                            }
+                        }
+                    })
+                    .state('app.delegacion', {
+                        url: "/delegacions/:delegacionId",
+                        views: {
+                            'menuContent': {
+                                templateUrl: "templates/delegacion.html",
+                                controller: 'DelegacionCtrl'
+                            }
+                        }
+                    })
+                    ;
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/app/home');
-        })
+        });

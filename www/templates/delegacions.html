@@ -1,0 +1,12 @@
+<ion-view view-title="Delegaciones">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-thumbnail-left"  ng-repeat="delegacion in delegacions"
+                href="#/app/delegacions/{{ delegacion.id }}">
+          <img src="img/logo-delegacion.png" alt="image delegacion"/>
+          <h1>{{delegacion.name}}</h1>
+          <p >{{ delegacion.email }}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
