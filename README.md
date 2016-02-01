@@ -14,6 +14,8 @@ Applicación basada en [Apache Cordova](https://cordova.apache.org/) y la SDK de
 
 >sudo npm update -g cordova ionic
 
+>sudo npm install -g gulp
+
 >git https://github.com/devilcius/AGAPP.git
 
 >cd AGAPP
