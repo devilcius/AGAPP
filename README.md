@@ -28,6 +28,8 @@ Applicación basada en [Apache Cordova](https://cordova.apache.org/) y la SDK de
 
 >ionic state restore
 
+>ionic hooks add
+
 >gulp copy
 
 ### despliegue en navegador
