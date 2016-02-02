@@ -77,8 +77,8 @@ angular.module('augc-app.controllers', ['augc-app.services'])
             $scope.shareAnywhere = function () {
                 var message = AUGC_CONFIG.shareComunicadoMsg;
                 var subject = AUGC_CONFIG.shareComunicadoSubject;
-                var link = AUGC_CONFIG.apiPostsUrl + $stateParams.postId + AUGC_CONFIG.apiResponseFormat;
-                //TODO: portal url, not api one, :/
+                var link = AUGC_CONFIG.portalNewsBaseUrl + encodeURI($scope.post.permalink);   
+                //console.log("link", link);
                 $cordovaSocialSharing.share(message, subject, null, link);
             };
 

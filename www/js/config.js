@@ -1,6 +1,7 @@
 angular.module('augc-app').constant(
         'AUGC_CONFIG', {
             apiResponseFormat: '.json',
+            portalNewsBaseUrl: 'http://augc.org/news/', 
             apiPostsUrl: 'http://augc.org/api/news/posts/',
             apiDelegacionsUrl: 'http://augc.org/api/admin/delegacions/',
             loginUrl: 'https://augc.org/app/user/login_check',
